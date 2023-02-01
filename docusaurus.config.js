@@ -9,9 +9,9 @@ const config = {
   title: 'PassWick Docs',
   tagline: 'Connect your systems and applications with PassWick to create, deliver, and administer wallet passes using Apple Wallet®',
   url: 'https://www.passwick.com',
-  baseUrl: '/',
-  onBrokenLinks: 'warn',
-  onBrokenMarkdownLinks: 'warn',
+  baseUrl: '/passwick-docs',
+  onBrokenLinks: 'throw',
+  onBrokenMarkdownLinks: 'throw',
   favicon: 'img/icon-small.png',
 
   // GitHub pages deployment config.
@@ -75,11 +75,13 @@ const config = {
             label: 'API',
             position: 'left'
           },
+          /*
           {
             href: 'https://cucreekco.github.com/passwick',
             label: 'GitHub',
             position: 'right',
           },
+           */
         ],
       },
       footer: {
@@ -89,8 +91,8 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/intro',
+                label: 'Guide',
+                to: '/intro',
               },
               {
                 label: 'API',
@@ -99,6 +101,7 @@ const config = {
 
             ],
           },
+            /*
           {
             title: 'Community',
             items: [
@@ -125,8 +128,10 @@ const config = {
               },
             ],
           },
+
+             */
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Copper Creek Software, LLC.`,
       },
       prism: {
         theme: lightCodeTheme,

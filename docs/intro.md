@@ -154,7 +154,14 @@ Then, when they click the pass it will add to their wallet:
 
 That's it! We just created an Apple Wallet pass for our Cornerstone gym!
 
-## What's Next
+## Using the PassWick API
 
-Use the PassWick API to create passes for our _Cornerstone_ gym pass.
+Click the [API](/api) menu option to [view the API guide](/api).
 
+You can visit the [live APIs here](https://app.passwick.com/api/swagger-ui.html#/). 
+
+## License and Agreeement
+
+Please be sure to [read our terms of service](https://app.passwick.com/legal/termsofservice.txt).
+
+PassWick is licensed under the [Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0)
