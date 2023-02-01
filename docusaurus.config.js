@@ -10,7 +10,7 @@ const config = {
   tagline: 'Connect your systems and applications with PassWick to create, deliver, and administer wallet passes using Apple Wallet®',
   url: 'https://www.passwick.com',
   baseUrl: '/',
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/icon-small.png',
 
