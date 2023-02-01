@@ -3,39 +3,41 @@ info:
   description: PassWick API
   version: V1
   title: PassWick API
-  termsOfService: https://null/legal/termsofservice.txt
+  termsOfService: https://app.passwick.com/legal/termsofservice.txt
   contact:
     name: Copper Creek Software
-  license: {}
-host: localhost:8081
+  license:
+    name: APACHE LICENSE, VERSION 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0
+host: app.passwick.com
 basePath: /api
 tags:
   - name: Organization
     description: >-
-      Organization is you or your business. Organizations have Customers that
-      can be business customers, employees, students, etc.
+      **Organization** is you or your business. **Organization**s have
+      **Customer**s that can be business customers, employees, students, etc.
   - name: Organization Customer
     description: >-
       A **Customer** is the person that holds your **Organization** digital
       **Pass** in their **Apple Wallet**
   - name: Organization Pass Designs
     description: >-
-      Organization is you or your business. Organizations have Customers that
-      can be business customers, employees, students, etc. Pass is a digital
-      representation of a thing like a coupon, event ticket, airline ticket,
-      certification, license, gym pass, etc. that is stored in the customer's
-      wallet. Customer is the person that holds your Organization's Pass in
-      their Apple Wallet. Template Pass is the design of a pass used at your
-      Organization. Customer Passes are created from this template using the
-      customer's data.
+      **Organization** is you or your business. **Organization**s have
+      **Customer**s that can be business customers, employees, students, etc.
+      **Pass** is a digital representation of a thing like a coupon, event
+      ticket, airline ticket, certification, license, gym pass, etc. that is
+      stored in the customer's wallet. **Customer** is the person that holds
+      your **Organization**'s **Pass** in their **Apple Wallet**. **Template
+      Pass** is the design of a pass used at your **Organization**. **Customer**
+      **Pass**es are created from this template using the customer's data.
   - name: Organization Passes
     description: >-
-      Organization is you or your business. Organizations have Customers that
-      can be business customers, employees, students, etc. Pass is a digital
-      representation of a thing like a coupon, event ticket, airline ticket,
-      certification, license, gym pass, etc. that is stored in the customer's
-      wallet. Customer is the person that holds your Organization's Pass in
-      their Apple Wallet.
+      **Organization** is you or your business. **Organization**s have
+      **Customer**s that can be business customers, employees, students, etc.
+      **Pass** is a digital representation of a thing like a coupon, event
+      ticket, airline ticket, certification, license, gym pass, etc. that is
+      stored in the customer's wallet. **Customer** is the person that holds
+      your **Organization**'s **Pass** in their **Apple Wallet**.
 paths:
   /pws/v1/ng/customer/batch/template/id/{templatePassId}:
     post:
@@ -45,11 +47,11 @@ paths:
         Save a New Batch of Customers to Organization connecting to a Template
         Pass
       description: >-
-        Requires a batch of Customer Models. A Customer Model is a JSON document
-        that contains the required structure and attribute names needed to
-        interact with the Customer API. Use the `Get Customer Models` endpoints
-        to retrieve the Customer Model structure and attributes forthe given
-        Template Pass and Correlation IDs.
+        Requires a batch of **Customer** Models. A **Customer** Model is a JSON
+        document that contains the required structure and attribute names needed
+        to interact with the **Customer** API. Use the `Get Customer Models`
+        endpoints to retrieve the **Customer** Model structure and attributes
+        forthe given **Template Pass** and Correlation IDs.
       operationId: saveNewCustomerBatchUsingPOST
       consumes:
         - application/json
@@ -88,9 +90,9 @@ paths:
         - Organization Customer
       summary: Get Customer Records by E-mail
       description: >-
-        Retrieve all Passes for a Customer given their e-mail address. This will
-        return Customer's who have the given e-mail and have a Pass for the
-        given Template Pass ID.
+        Retrieve all **Pass**es for a **Customer** given their e-mail address.
+        This will return **Customer**'s who have the given e-mail and have a
+        **Pass** for the given **Template Pass** ID.
       operationId: getCustomersByOrganizationPassTemplateAndEmailUsingGET
       produces:
         - application/json
@@ -123,7 +125,7 @@ paths:
       tags:
         - Organization Customer
       summary: Get Customer List
-      description: Retrieve all Customers for a Template Pass.
+      description: Retrieve all **Customer**s for a **Template Pass**.
       operationId: getCustomersByOrganizationPassTemplateUsingGET
       produces:
         - application/json
@@ -206,8 +208,9 @@ paths:
         - Organization Customer
       summary: Get All Customer Models
       description: >-
-        A Customer Model is a JSON document that contains the required structure
-        and attribute names needed to interact with the Customer API.
+        A **Customer** Model is a JSON document that contains the required
+        structure and attribute names needed to interact with the **Customer**
+        API.
       operationId: getCustomerModelCorrelationUsingGET
       produces:
         - '*/*'
@@ -243,8 +246,9 @@ paths:
         - Organization Customer
       summary: Get All Customer Models
       description: >-
-        A Customer Model is a JSON document that contains the required structure
-        and attribute names needed to interact with the Customer API.
+        A **Customer** Model is a JSON document that contains the required
+        structure and attribute names needed to interact with the **Customer**
+        API.
       operationId: getCustomerModelUsingGET_1
       produces:
         - '*/*'
@@ -280,9 +284,9 @@ paths:
         - Organization Customer
       summary: Get QR Code for Correlation ID
       description: >-
-        Given a Customer's correlation ID retrieve the related Customer Pass and
-        generate a QR code that encodes the unique URL to retrieve the given
-        Customer's correlation ID wallet Pass.
+        Given a **Customer**'s correlation ID retrieve the related **Customer**
+        **Pass** and generate a QR code that encodes the unique URL to retrieve
+        the given **Customer**'s correlation ID wallet **Pass**.
       operationId: customerQrCodeByCorrelationUsingGET
       produces:
         - image/png
@@ -323,10 +327,11 @@ paths:
         - Organization Customer
       summary: Save a New Customer to Organization connecting to a Template Pass
       description: >-
-        Requires a single Customer Model which is a JSON document that contains
-        the required structure and attribute names needed to interact with the
-        Customer API. Use the `Get Customer Model` endpoints to retrieve the
-        Customer Model structure and attributes forthe given Template Pass.
+        Requires a single **Customer** Model which is a JSON document that
+        contains the required structure and attribute names needed to interact
+        with the **Customer** API. Use the `Get Customer Model` endpoints to
+        retrieve the **Customer** Model structure and attributes forthe given
+        **Template Pass**.
       operationId: saveNewCustomerUsingPOST
       consumes:
         - application/json
@@ -364,11 +369,12 @@ paths:
         - Organization Customer
       summary: Update Customer
       description: >-
-        Requires a single Customer Model which is a JSON document that contains
-        the required structure and attribute names needed to interact with the
-        Customer API. Use the `Get Customer Model` endpoints to retrieve the
-        Customer Model structure and attributes forthe given Template Pass. The
-        input Customer Model must have the Correlation ID set.
+        Requires a single **Customer** Model which is a JSON document that
+        contains the required structure and attribute names needed to interact
+        with the **Customer** API. Use the `Get Customer Model` endpoints to
+        retrieve the **Customer** Model structure and attributes forthe given
+        **Template Pass**. The input **Customer** Model must have the
+        Correlation ID set.
       operationId: updateCustomerUsingPUT
       consumes:
         - application/json
@@ -406,11 +412,11 @@ paths:
         - Organization Customer
       summary: Delete Customer
       description: >-
-        Requires a single Customer Model which is a JSON document that contains
-        the required structure and attribute names needed to interact with the
-        Customer API. Use the `Get Customer Model` endpoints to retrieve the
-        Customer Model structure and attributes forthe given Template Pass and
-        Correlation ID.
+        Requires a single **Customer** Model which is a JSON document that
+        contains the required structure and attribute names needed to interact
+        with the **Customer** API. Use the `Get Customer Model` endpoints to
+        retrieve the **Customer** Model structure and attributes forthe given
+        **Template Pass** and Correlation ID.
       operationId: deleteCustomerByCorrelationIdUsingDELETE
       produces:
         - '*/*'
@@ -445,7 +451,7 @@ paths:
         - Organization Customer
       summary: Update Customer Email
       description: >-
-        Finds the Customer pass by the unique pass serial number and updates
+        Finds the **Customer** pass by the unique pass serial number and updates
         their e-mail address to theinput address.
       operationId: updateCustomerEmailUsingPUT
       consumes:
@@ -489,8 +495,8 @@ paths:
         - Organization
       summary: Return Organization public info.
       description: >-
-        Organization is you or your business. Organizations have Customers that
-        can be business customers, employees, students, etc.
+        **Organization** is you or your business. **Organization**s have
+        **Customer**s that can be business customers, employees, students, etc.
       operationId: getOrganizationUsingGET
       produces:
         - '*/*'
@@ -567,10 +573,10 @@ paths:
         - Organization
       summary: Retrieve all Passes for your Organization.
       description: >-
-        Customer is the person that holds your Organization's Pass in their
-        Apple Wallet. Pass is a digital representation of a thing like a coupon,
-        event ticket, airline ticket, certification, license, gym pass, etc.
-        that is stored in the customer's wallet.
+        **Customer** is the person that holds your **Organization**'s **Pass**
+        in their **Apple Wallet**. **Pass** is a digital representation of a
+        thing like a coupon, event ticket, airline ticket, certification,
+        license, gym pass, etc. that is stored in the customer's wallet.
       operationId: getOrganizationPassesUsingGET
       produces:
         - '*/*'
@@ -594,9 +600,9 @@ paths:
         - Organization
       summary: For the Organization, return high-level Template Pass list.
       description: >-
-        Template Pass is the design of a pass used at your Organization.
-        Customer Passes are created from this template using the customer's
-        data.
+        **Template Pass** is the design of a pass used at your **Organization**.
+        **Customer** **Pass**es are created from this template using the
+        customer's data.
       operationId: getOrganizationTemplatesUsingGET
       produces:
         - '*/*'
@@ -620,13 +626,14 @@ paths:
         - Organization Passes
       summary: Get Pass by Correlation ID
       description: >-
-        When an Organization creates a Pass for a Customer using PassWick they
-        must also providea **correlation ID**. This correlation ID is an
-        identifier defined solely by the Organizationand should be an internal
-        ID that is unique to the Organization's Customer. The correlation ID can
-        be used to quickly retrieve passes specific to their Customer. This
-        endpoint returns the binary representation of a pass that can be
-        installed directly into the Apple Wallet.
+        When an **Organization** creates a **Pass** for a **Customer** using
+        **Pass**Wick they must also providea **correlation ID**. This
+        correlation ID is an identifier defined solely by the
+        **Organization**and should be an internal ID that is unique to the
+        **Organization**'s **Customer**. The correlation ID can be used to
+        quickly retrieve passes specific to their **Customer**. This endpoint
+        returns the binary representation of a pass that can be installed
+        directly into the **Apple Wallet**.
       operationId: getPassbookPassByCorrelationIdUsingGET
       produces:
         - application/json
@@ -655,13 +662,14 @@ paths:
         - Organization Passes
       summary: Delete Pass
       description: >-
-        When an Organization creates a Pass for a Customer using PassWick they
-        must also providea **correlation ID**. This correlation ID is an
-        identifier defined solely by the Organizationand should be an internal
-        ID that is unique to the Organization's Customer. The correlation ID can
-        be used to quickly retrieve passes specific to their Customer. This
-        endpoint deletes a Customer's pass by correlation ID. **Deleting a Pass
-        does not removeit from the Customer's wallet.**
+        When an **Organization** creates a **Pass** for a **Customer** using
+        **Pass**Wick they must also providea **correlation ID**. This
+        correlation ID is an identifier defined solely by the
+        **Organization**and should be an internal ID that is unique to the
+        **Organization**'s **Customer**. The correlation ID can be used to
+        quickly retrieve passes specific to their **Customer**. This endpoint
+        deletes a **Customer**'s pass by correlation ID. **Deleting a Pass does
+        not removeit from the **Customer**'s wallet.**
       operationId: deletePassByCorrelationIdUsingDELETE
       produces:
         - '*/*'
@@ -687,11 +695,12 @@ paths:
         - Organization Passes
       summary: A Shareable Link to a Pass
       description: >-
-        Each Organization Customer Pass has a unique serial number generated by
-        PassWick. This serial number is returned when a Pass is created for the
-        Customer. This serial number can be used to quickly retrieve passes.
-        This endpoint represents a shareable link that can be sent to Customers
-        for them to click and quickly install pass in their Apple Wallet.
+        Each **Organization** **Customer** **Pass** has a unique serial number
+        generated by **Pass**Wick. This serial number is returned when a
+        **Pass** is created for the **Customer**. This serial number can be used
+        to quickly retrieve passes. This endpoint represents a shareable link
+        that can be sent to **Customer**s for them to click and quickly install
+        pass in their **Apple Wallet**.
       operationId: getPassByOrgAuthSerialUsingGET
       produces:
         - application/vnd.apple.pkpass
@@ -714,7 +723,7 @@ paths:
           in: path
           description: >-
             Pass Serial Number generated by PassWick and available in your
-            Customer pass list
+            **Customer** pass list
           required: false
           type: string
       responses:
@@ -737,9 +746,10 @@ paths:
       summary: Get Pass List
       description: >-
         This endpoint returns the JSON representation of all passes for an
-        Organization forall Customers that are part of the Organization.This
-        endpoint returns the JSON representation of a pass that can be used to
-        view low-level details about the Customer Passes.
+        **Organization** forall **Customer**s that are part of the
+        **Organization**.This endpoint returns the JSON representation of a pass
+        that can be used to view low-level details about the **Customer**
+        **Pass**es.
       operationId: getPassbookPassListUsingGET
       produces:
         - application/json
@@ -761,14 +771,15 @@ paths:
     get:
       tags:
         - Organization Passes
-      summary: Get Pass Information
+      summary: Get Pass by Serial Number
       description: >-
-        Each Organization Customer Pass has a unique serial number generated by
-        PassWick. This serial number is returned when a Pass is created for the
-        Customer. This serial number can be used to quickly retrieve passes.
-        This endpoint returns the JSON representation of a pass that can be used
-        to view low-level details about the specific Customer's Pass.
-      operationId: getPassbookPassJSONUsingGET
+        Each **Organization** **Customer** **Pass** has a unique serial number
+        generated by **Pass**Wick. This serial number is returned when a
+        **Pass** is created for the **Customer**. This serial number can be used
+        to quickly retrieve passes. This endpoint returns the binary
+        representation of a pass that can be installed directly into the **Apple
+        Wallet**.
+      operationId: getPassbookPassBySerialNumberUsingGET
       produces:
         - application/json
         - application/vnd.apple.pkpass
@@ -782,7 +793,8 @@ paths:
         '200':
           description: OK
           schema:
-            $ref: '#/definitions/PassbookPassVO'
+            type: string
+            format: byte
         '401':
           description: Unauthorized
         '403':
@@ -795,11 +807,12 @@ paths:
         - Organization Passes
       summary: Delete Pass
       description: >-
-        Each Organization Customer Pass has a unique serial number generated by
-        PassWick. This serial number is returned when a Pass is created for the
-        Customer. This serial number can be used to quickly retrieve passes.
-        This endpoint deletes a Customer pass by the Pass serial number.
-        **Deleting a Pass does not remove it from the Customer's wallet.**
+        Each **Organization** **Customer** **Pass** has a unique serial number
+        generated by **Pass**Wick. This serial number is returned when a
+        **Pass** is created for the **Customer**. This serial number can be used
+        to quickly retrieve passes. This endpoint deletes a **Customer** pass by
+        the **Pass** serial number. **Deleting a Pass does not remove it from
+        the **Customer**'s wallet.**
       operationId: deletePassUsingDELETE
       produces:
         - '*/*'
@@ -825,13 +838,13 @@ paths:
         - Organization Passes
       summary: Upload Thumbnail Image
       description: >-
-        Each Organization Customer Pass has a unique serial number generated by
-        PassWick. This serial number is returned when a Pass is created for the
-        Customer. This serial number can be used to quickly retrieve or update
-        passes. When an Organization creates a Template Pass it can be
-        configured to include a thumbnail image on the front of the pass. This
-        endpoint is used upload an thumbnail image that will be shown on the
-        front of the Customer's pass.
+        Each **Organization** **Customer** **Pass** has a unique serial number
+        generated by **Pass**Wick. This serial number is returned when a
+        **Pass** is created for the **Customer**. This serial number can be used
+        to quickly retrieve or update passes. When an **Organization** creates a
+        **Template Pass** it can be configured to include a thumbnail image on
+        the front of the pass. This endpoint is used upload an thumbnail image
+        that will be shown on the front of the **Customer**'s pass.
       operationId: uploadPassThumbnailImageUsingPOST
       consumes:
         - multipart/form-data
@@ -865,13 +878,13 @@ paths:
         - Organization Passes
       summary: Delete Thumbnail Image
       description: >-
-        Each Organization Customer Pass has a unique serial number generated by
-        PassWick. This serial number is returned when a Pass is created for the
-        Customer. This serial number can be used to quickly retrieve or update
-        passes. When an Organization creates a Template Pass it can be
-        configured to include a thumbnail image on the front of the pass. This
-        endpoint is used delete the thumbnail image that is shown on the front
-        of the Customer's pass.
+        Each **Organization** **Customer** **Pass** has a unique serial number
+        generated by **Pass**Wick. This serial number is returned when a
+        **Pass** is created for the **Customer**. This serial number can be used
+        to quickly retrieve or update passes. When an **Organization** creates a
+        **Template Pass** it can be configured to include a thumbnail image on
+        the front of the pass. This endpoint is used delete the thumbnail image
+        that is shown on the front of the **Customer**'s pass.
       operationId: deletePassThumbnailImageUsingDELETE
       produces:
         - application/json
@@ -897,14 +910,15 @@ paths:
         - Organization Passes
       summary: Touch Pass
       description: >-
-        When an Organization creates a Pass for a Customer using PassWick they
-        must also providea **correlation ID**. This correlation ID is an
-        identifier defined solely by the Organizationand should be an internal
-        ID that is unique to the Organization's Customer. The correlation ID can
-        be used to quickly retrieve passes specific to their Customer. This
-        endpoint will change the pass last updated date and refresh the pass by
-        pulling external data (if so configured). This will result in an update
-        to the Customer's pass in their wallet.
+        When an **Organization** creates a **Pass** for a **Customer** using
+        **Pass**Wick they must also providea **correlation ID**. This
+        correlation ID is an identifier defined solely by the
+        **Organization**and should be an internal ID that is unique to the
+        **Organization**'s **Customer**. The correlation ID can be used to
+        quickly retrieve passes specific to their **Customer**. This endpoint
+        will change the pass last updated date and refresh the pass by pulling
+        external data (if so configured). This will result in an update to the
+        **Customer**'s pass in their wallet.
       operationId: touchPassByCorrelationIdUsingPUT
       consumes:
         - application/json
@@ -936,12 +950,13 @@ paths:
         - Organization Passes
       summary: Touch Pass
       description: >-
-        Each Organization Customer Pass has a unique serial number generated by
-        PassWick. This serial number is returned when a Pass is created for the
-        Customer. This serial number can be used to quickly retrieve passes.
-        This endpoint will change the pass last updated date and refresh the
-        pass by pulling external data (if so configured). This will result in an
-        update to the Customer's pass in their wallet.
+        Each **Organization** **Customer** **Pass** has a unique serial number
+        generated by **Pass**Wick. This serial number is returned when a
+        **Pass** is created for the **Customer**. This serial number can be used
+        to quickly retrieve passes. This endpoint will change the pass last
+        updated date and refresh the pass by pulling external data (if so
+        configured). This will result in an update to the **Customer**'s pass in
+        their wallet.
       operationId: touchPassUsingPUT
       consumes:
         - application/json
@@ -973,13 +988,14 @@ paths:
         - Organization Passes
       summary: Void Pass
       description: >-
-        When an Organization creates a Pass for a Customer using PassWick they
-        must also providea **correlation ID**. This correlation ID is an
-        identifier defined solely by the Organizationand should be an internal
-        ID that is unique to the Organization's Customer. The correlation ID can
-        be used to quickly retrieve passes specific to their Customer. This
-        endpoint voids a Customer pass by the Pass serial number. Voiding a pass
-        will move the pass to **hidden** in the Apple Wallet.
+        When an **Organization** creates a **Pass** for a **Customer** using
+        **Pass**Wick they must also providea **correlation ID**. This
+        correlation ID is an identifier defined solely by the
+        **Organization**and should be an internal ID that is unique to the
+        **Organization**'s **Customer**. The correlation ID can be used to
+        quickly retrieve passes specific to their **Customer**. This endpoint
+        voids a **Customer** pass by the **Pass** serial number. Voiding a pass
+        will move the pass to **hidden** in the **Apple Wallet**.
       operationId: voidPassByCorrelationUsingPUT
       consumes:
         - application/json
@@ -1011,11 +1027,12 @@ paths:
         - Organization Passes
       summary: Void Pass
       description: >-
-        Each Organization Customer Pass has a unique serial number generated by
-        PassWick. This serial number is returned when a Pass is created for the
-        Customer. This serial number can be used to quickly retrieve passes.
-        This endpoint voids a Customer pass by the Pass serial number. Voiding a
-        pass will move the pass to **hidden** in the Apple Wallet.
+        Each **Organization** **Customer** **Pass** has a unique serial number
+        generated by **Pass**Wick. This serial number is returned when a
+        **Pass** is created for the **Customer**. This serial number can be used
+        to quickly retrieve passes. This endpoint voids a **Customer** pass by
+        the **Pass** serial number. Voiding a pass will move the pass to
+        **hidden** in the **Apple Wallet**.
       operationId: voidPassUsingPUT
       consumes:
         - application/json
@@ -1047,13 +1064,14 @@ paths:
         - Organization Pass Designs
       summary: Retrieve Customer Passes related to a Template Pass
       description: >-
-        Template Pass is the design of a pass used at your Organization.
-        Customer Passes are created from this template using the customer's
-        data. Each Template Pass in your Organization has a unique ID that is
-        used when interacting with the PassWick API to create Customer passes
-        from a template pass.This endpoint returns a list of Customer pass data
-        for a Template Pass. This is beneficial to see the pass detail for all
-        Customers holding a pass based on the Template Pass design.
+        **Template Pass** is the design of a pass used at your **Organization**.
+        **Customer** **Pass**es are created from this template using the
+        customer's data. Each **Template Pass** in your **Organization** has a
+        unique ID that is used when interacting with the PassWick API to create
+        **Customer** passes from a template pass.This endpoint returns a list of
+        **Customer** pass data for a **Template **Pass****. This is beneficial
+        to see the pass detail for all **Customer**s holding a pass based on the
+        **Template Pass** design.
       operationId: getTemplatePassChildPassesUsingGET
       produces:
         - '*/*'
@@ -1084,12 +1102,12 @@ paths:
         - Organization Pass Designs
       summary: Retrieve Global Template Passes
       description: >-
-        Template Pass is the design of a pass used at your Organization.
-        Customer Passes are created from this template using the customer's
-        data. Each Template Pass in your Organization has a unique ID that is
-        used when interacting with the PassWick API to create Customer passes
-        from a template pass.This endpoint returns a list of your Organization's
-        template passes.
+        **Template Pass** is the design of a pass used at your **Organization**.
+        **Customer** **Pass**es are created from this template using the
+        customer's data. Each **Template Pass** in your **Organization** has a
+        unique ID that is used when interacting with the PassWick API to create
+        **Customer** passes from a template pass.This endpoint returns a list of
+        your **Organization**'s template passes.
       operationId: getGlobalTemplatesUsingGET
       produces:
         - '*/*'
@@ -1113,11 +1131,12 @@ paths:
         - Organization Pass Designs
       summary: Retrieve Template Pass
       description: >-
-        Template Pass is the design of a pass used at your Organization.
-        Customer Passes are created from this template using the customer's
-        data. Each Template Pass in your Organization has a unique ID that is
-        used when interacting with the PassWick API to create Customer passes
-        from a template pass.This endpoint returns a single Template Pass by ID.
+        **Template Pass** is the design of a pass used at your **Organization**.
+        **Customer** **Pass**es are created from this template using the
+        customer's data. Each **Template Pass** in your **Organization** has a
+        unique ID that is used when interacting with the PassWick API to create
+        **Customer** passes from a template pass.This endpoint returns a single
+        **Template Pass** by ID.
       operationId: getTemplatePassJSONUsingGET
       produces:
         - '*/*'
@@ -1165,14 +1184,15 @@ definitions:
         type: string
     title: Customer Data Field
     description: >-
-      Customer is the person that holds your Organization's Pass in their Apple
-      Wallet. Pass is a digital representation of a thing like a coupon, event
-      ticket, airline ticket, certification, license, gym pass, etc. that is
-      stored in the customer's wallet. Organization's create a Template Pass
-      that defines the style, structure, and layout of a digital pass. The
-      Template Pass defines which fields on the digital pass will be populated
-      with Customer data.This model defines the data field definition for a
-      Customer's data that will populated on their custom Apple Wallet pass.
+      **Customer** is the person that holds your **Organization**'s **Pass** in
+      their **Apple Wallet**. **Pass** is a digital representation of a thing
+      like a coupon, event ticket, airline ticket, certification, license, gym
+      pass, etc. that is stored in the customer's wallet. **Organization**'s
+      create a **Template Pass** that defines the style, structure, and layout
+      of a digital pass. The **Template Pass** defines which fields on the
+      digital pass will be populated with **Customer** data.This model defines
+      the data field definition for a **Customer**'s data that will populated on
+      their custom **Apple Wallet** pass.
   Organization Customer:
     type: object
     properties:
@@ -1182,8 +1202,9 @@ definitions:
         $ref: '#/definitions/Organization Customer who holds a Pass'
     title: Organization Customer
     description: >-
-      Customer is the person that holds your Organization's Pass in their Apple
-      Wallet. This model defines the attributes of a Customer.
+      **Customer** is the person that holds your **Organization**'s **Pass** in
+      their **Apple Wallet**. This model defines the attributes of a
+      **Customer**.
   Organization Customer Batch:
     type: object
     properties:
@@ -1196,9 +1217,9 @@ definitions:
         format: int64
     title: Organization Customer Batch
     description: >-
-      Customer is the person that holds your Organization's Pass in their Apple
-      Wallet. This model is used to send or receive batches of Customers from
-      the PassWick API.
+      **Customer** is the person that holds your **Organization**'s **Pass** in
+      their **Apple Wallet**. This model is used to send or receive batches of
+      **Customer**s from the **Pass**Wick API.
   Organization Customer who holds a Pass:
     type: object
     properties:
@@ -1216,11 +1237,11 @@ definitions:
         type: boolean
     title: Organization Customer who holds a Pass
     description: >-
-      Customer is the person that holds your Organization's Pass in their Apple
-      Wallet. Pass is a digital representation of a thing like a coupon, event
-      ticket, airline ticket, certification, license, gym pass, etc. that is
-      stored in the customer's wallet.This model combines the Customer and the
-      Pass into a single readable unit.
+      **Customer** is the person that holds your **Organization**'s **Pass** in
+      their **Apple Wallet**. **Pass** is a digital representation of a thing
+      like a coupon, event ticket, airline ticket, certification, license, gym
+      pass, etc. that is stored in the customer's wallet.This model combines the
+      **Customer** and the **Pass** into a single readable unit.
   Organization Template Pass:
     type: object
     properties:
@@ -1238,16 +1259,16 @@ definitions:
         type: string
     title: Organization Template Pass
     description: >-
-      Customer is the person that holds your Organization's Pass in their Apple
-      Wallet. Pass is a digital representation of a thing like a coupon, event
-      ticket, airline ticket, certification, license, gym pass, etc. that is
-      stored in the customer's wallet. Organization's create a Template Pass
-      that defines the style, structure, and layout of a digital pass. The
-      Template Pass defines not only the layout and structure of the digital
-      pass but also those fields on the digital pass that will be populated with
-      Customer data.This model defines the attributes of a Template Pass. When
-      combined with Customer data the resultis a digital Pass that can be used
-      in the Apple Wallet.
+      **Customer** is the person that holds your **Organization**'s **Pass** in
+      their **Apple Wallet**. **Pass** is a digital representation of a thing
+      like a coupon, event ticket, airline ticket, certification, license, gym
+      pass, etc. that is stored in the **Customer**'s wallet. **Organization**'s
+      create a **Template Pass** that defines the style, structure, and layout
+      of a digital pass. The **Template Pass** defines not only the layout and
+      structure of the digital pass but also those fields on the digital pass
+      that will be populated with **Customer** data.This model defines the
+      attributes of a **Template Pass**. When combined with **Customer** data
+      the resultis a digital **Pass** that can be used in the **Apple Wallet**.
   OrganizationPublicInfoDTO:
     type: object
     properties:
